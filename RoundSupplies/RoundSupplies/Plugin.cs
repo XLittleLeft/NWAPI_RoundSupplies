@@ -6,6 +6,7 @@ using PluginAPI.Core.Attributes;
 using PluginAPI.Core.Items;
 using PluginAPI.Enums;
 using PluginAPI.Events;
+using System.Threading.Tasks;
 
 namespace RoundSupplies.RoundSupplies
 {
@@ -26,8 +27,7 @@ namespace RoundSupplies.RoundSupplies
                     switch (roleTypeId)
                     {
                         case RoleTypeId.ClassD:
-                            player.ReferenceHub.inventory.ServerAddItem(ItemType.KeycardJanitor, Config.ItemNumber);
-                            player.ReferenceHub.inventory.ServerAddItem(ItemType.Flashlight, Config.ItemNumber);
+                                player.ReferenceHub.inventory.ServerAddItem(ItemType.KeycardJanitor, Config.ItemNumber);
                             break;
                     }
                 }
