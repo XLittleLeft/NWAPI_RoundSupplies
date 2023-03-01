@@ -6,5 +6,7 @@ namespace RoundSupplies.RoundSupplies
     {
         [Description("数量")]
         public ushort ItemNumber { get; set; } = 1;
+        [Description("物品")]
+        public ItemType ItemType { get; set; } = ItemType.KeycardJanitor;
     }
 }

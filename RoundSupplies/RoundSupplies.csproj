@@ -75,7 +75,7 @@
       <HintPath>H:\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mono.WebBrowser.dll</HintPath>
     </Reference>
     <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Northwood.PluginAPI.12.0.0-rc.2\lib\net48\PluginAPI.dll</HintPath>
+      <HintPath>..\packages\Northwood.PluginAPI.12.0.0\lib\net48\PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

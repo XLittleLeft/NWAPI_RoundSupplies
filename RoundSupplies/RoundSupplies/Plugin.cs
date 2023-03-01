@@ -12,7 +12,7 @@ namespace RoundSupplies.RoundSupplies
 {
     internal class Plugin
     {
-        [PluginEntryPoint("RoundSupplies","1.0","give something to class d when round start","X小左(XLittleLeft)")]
+        [PluginEntryPoint("RoundSupplies","1.0","give something to class d when player spawn","X小左(XLittleLeft)")]
         void Enabled()
         {
             EventManager.RegisterEvents(this);
@@ -22,13 +22,11 @@ namespace RoundSupplies.RoundSupplies
         {
             Timing.CallDelayed(1f, () =>
             {
-                if (roleTypeId.GetTeam() != Team.SCPs)
+                if (player.Role is RoleTypeId.ClassD)
                 {
-                    switch (roleTypeId)
+                    for (int i = 0;i < Config.ItemNumber;i++)
                     {
-                        case RoleTypeId.ClassD:
-                                player.ReferenceHub.inventory.ServerAddItem(ItemType.KeycardJanitor, Config.ItemNumber);
-                            break;
+                        player.AddItem(Config.ItemType);
                     }
                 }
             });
