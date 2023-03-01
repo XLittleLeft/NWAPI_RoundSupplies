@@ -12,7 +12,7 @@ namespace RoundSupplies.RoundSupplies
 {
     internal class Plugin
     {
-        [PluginEntryPoint("RoundSupplies","1.0","give something to class d when player spawn","X小左(XLittleLeft)")]
+        [PluginEntryPoint("RoundSupplies","1.0.1","give something to class d when player spawn","X小左(XLittleLeft)")]
         void Enabled()
         {
             EventManager.RegisterEvents(this);
