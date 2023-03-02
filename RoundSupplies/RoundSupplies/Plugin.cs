@@ -6,12 +6,15 @@ using PluginAPI.Core.Attributes;
 using PluginAPI.Core.Items;
 using PluginAPI.Enums;
 using PluginAPI.Events;
+using System;
 using System.Threading.Tasks;
 
 namespace RoundSupplies.RoundSupplies
 {
     internal class Plugin
     {
+        Random Random = new Random();
+
         [PluginEntryPoint("RoundSupplies","1.0.1","give something to class d when player spawn","X小左(XLittleLeft)")]
         void Enabled()
         {
@@ -22,11 +25,24 @@ namespace RoundSupplies.RoundSupplies
         {
             Timing.CallDelayed(1f, () =>
             {
-                if (player.Role is RoleTypeId.ClassD)
+                if (Config.RandomGive)
                 {
-                    for (int i = 0;i < Config.ItemNumber;i++)
+                    if (player.Role is RoleTypeId.ClassD && Random.Next(5) < 2)
                     {
-                        player.AddItem(Config.ItemType);
+                        for (int i = 0; i < Config.ItemNumber; i++)
+                        {
+                            player.AddItem(Config.ItemType);
+                        }
+                    }
+                }
+                else
+                {
+                    if (player.Role is RoleTypeId.ClassD)
+                    {
+                        for (int i = 0; i < Config.ItemNumber; i++)
+                        {
+                            player.AddItem(Config.ItemType);
+                        }
                     }
                 }
             });
